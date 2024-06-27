@@ -163,6 +163,9 @@ func Provider() *schema.Provider {
 		}
 
 		token := os.Getenv("SEMATEXT_API_KEY")
+		if apiKey == "" {
+		    	apiKey = d.Get("sematext_api_key").(string)
+		}
 		if !sematext.IsValidUUID(token) {
 			diags = append(diags, diag.Diagnostic{
 				Severity: diag.Error,
