@@ -18,7 +18,8 @@ terraform {
 }
 
 provider "sematext" {
-  sematext_region = "US"
+  sematext_api_key = "00000000-0000-0000-0000-000000000000"
+  sematext_region  = "US"
 }
 
 resource "<<RESOURCE_NAME>>" "myapp" {
