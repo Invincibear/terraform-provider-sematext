@@ -163,18 +163,6 @@ func Provider() *schema.Provider {
 
 		}
 
-		region := d.Get("sematext_region").(string)
-		if !sematext.IsValidSematextRegion(region) {
-			diags = append(diags, diag.Diagnostic{
-				Severity: diag.Error,
-				Summary:  "Missing or invalid sematext_region parameter in provider stanza",
-				Detail:   "Missing or invalid sematext_region parameter in provider stanza",
-			})
-
-			return nil, diags
-
-		}
-
 		token := os.Getenv("SEMATEXT_API_KEY")
 		if apiKey == "" {
 		    	apiKey = d.Get("sematext_api_key").(string)
@@ -184,6 +172,18 @@ func Provider() *schema.Provider {
 				Severity: diag.Error,
 				Summary:  "Missing or invalid env SEMATEXT_API_KEY",
 				Detail:   "Missing or invalid env SEMATEXT_API_KEY",
+			})
+
+			return nil, diags
+
+		}
+
+		region := d.Get("sematext_region").(string)
+		if !sematext.IsValidSematextRegion(region) {
+			diags = append(diags, diag.Diagnostic{
+				Severity: diag.Error,
+				Summary:  "Missing or invalid sematext_region parameter in provider stanza",
+				Detail:   "Missing or invalid sematext_region parameter in provider stanza",
 			})
 
 			return nil, diags
