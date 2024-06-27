@@ -33,7 +33,7 @@ func Provider() *schema.Provider {
 				DefaultFunc: schema.EnvDefaultFunc("SEMATEXT_API_KEY", ""),
 				ValidateFunc: func(val interface{}, key string) (warns []string, errs []error) {
 					api_key := val.(string)
-					if val == !nil && !sematext.IsValidUUID(api_key) {
+					if val != nil && !sematext.IsValidUUID(api_key) {
 						errs = append(errs, fmt.Errorf("ERROR  : sematext_api_key invalid in sematext provider"))
 					}
 					return
