@@ -11,7 +11,7 @@ import (
 
 	"github.com/hashicorp/terraform-plugin-sdk/v2/diag"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
-	"github.com/sematext/terraform-provider-sematext/sematext"
+	"github.com/invincibear/terraform-provider-sematext/sematext"
 )
 
 // resourceAppAwsec2 is the resource class that handles sematext_app_awsec2
