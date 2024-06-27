@@ -12,6 +12,8 @@ require (
 	github.com/sematext/sematext-api-client-go v1.5.0
 )
 
+require github.com/sematext/terraform-provider-sematext v0.6.1
+
 require (
 	github.com/ProtonMail/go-crypto v0.0.0-20230518184743-7afd39499903 // indirect
 	github.com/agext/levenshtein v1.2.3 // indirect
