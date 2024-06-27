@@ -27,6 +27,19 @@ func Provider() *schema.Provider {
 	provider := &schema.Provider{
 
 		Schema: map[string]*schema.Schema{
+			"sematext_api_key": {
+				Type:        schema.TypeString,
+				Required:    false,
+				DefaultFunc: schema.EnvDefaultFunc("SEMATEXT_API_KEY", ""),
+				ValidateFunc: func(val interface{}, key string) (warns []string, errs []error) {
+					api_key := val.(string)
+					if val == !nil && !sematext.IsValidUUID(api_key) {
+						errs = append(errs, fmt.Errorf("ERROR  : sematext_api_key invalid in sematext provider"))
+					}
+					return
+				},
+				Description: "Your Sematext API key, if not set using environment variable SEMATEXT_API_KEY.",
+			},
 			"sematext_region": {
 				Type:        schema.TypeString,
 				Required:    true,
