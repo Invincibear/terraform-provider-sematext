@@ -19,7 +19,7 @@ terraform {
 
 provider "sematext" {
     sematext_api_key = "00000000-0000-0000-0000-000000000000"
-    sematext_region = "US"
+    sematext_region  = "US"
 }
 
 resource "sematext_monitor_nodejs" "mymonitor" {
@@ -32,6 +32,7 @@ resource "sematext_monitor_nodejs" "mymonitor" {
 
 The following arguments are supported:
 
+* `sematext_api_key` - (Optional) your Sematext Cloud API key. Falls back to using the SEMATEXT_API_KEY environment variable (see below);
 * `sematext_region` - (Required) desired Sematext Cloud Region  "US" or "EU";
 
 
