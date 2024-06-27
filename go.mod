@@ -1,4 +1,4 @@
-module github.com/sematext/terraform-provider-sematext
+module github.com/invincibear/terraform-provider-sematext
 
 go 1.18
 
