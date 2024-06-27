@@ -3,7 +3,7 @@ package main
 import (
 	"github.com/hashicorp/terraform-plugin-sdk/v2/plugin"
 
-	"github.com/sematext/terraform-provider-sematext/sematext/generated"
+	"github.com/invincibear/terraform-provider-sematext/sematext/generated"
 )
 
 func main() {
